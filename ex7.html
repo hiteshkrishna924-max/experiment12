@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head><title>STUDENT MARKS</title></head>
+	<style>
+		.card{background-color:black;
+		align-items:center;
+		color:green;
+		height:150px;
+		width:200px;}
+		
+	</style>
+	<body >
+		<div class="card">
+			<h1>STUDENT MARKS</h1>
+			<p id='result'></p>
+		</div>
+	
+	<script>
+		const subjects=5;
+		let marks=[89,88,98,90,91];
+		let total=0;
+		for (let i=0;i<subjects;i++)
+			total=total+marks[i];
+		const average=total/subjects;
+		function calculategrade(avg){
+			if (avg>90){
+				return "A";}
+			else if (avg>80){
+				return "b";}
+			else if (avg>70){
+				return "c";}
+			else if (avg>60){
+				return "d";}
+			else if (avg>50){
+				return "e";}
+			else{
+				return "f";}}
+		const grade=calculategrade(average)
+		document.getElementById('result').innerHTML=
+		'marks:'+marks+"<br>"+"total:"+total+"<br>"+"Grade:"+grade
+	</script>
+	</body>
+</html>
